@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-import models
+from models import player
 
 app = Flask(__name__)
 app.secret_key = 's3cr3t'
