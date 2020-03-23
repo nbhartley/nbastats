@@ -1,4 +1,11 @@
 <html>
-    <title>Hello</title>
-    <body>asdfasdfasdf</body>
+    <ul>
+      {% for player in players %}
+      <li><{{player.name}}</li>
+      {% endfor %}
+    </ul>
+    <hr/>
+    <p>{{players|length}} player{{players|length|pluralize}}
+      found in the database.</p>
+    {% endblock %}
 </html>

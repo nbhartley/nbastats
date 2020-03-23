@@ -1,11 +1,13 @@
 from flask import Flask, render_template, redirect, url_for
-#from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
+import models
 
 app = Flask(__name__)
-#app.secret_key = '123'
-#app.config.from_object('config')
-#db = SQLAlchemy(app, session_options={'autocommit': False})
+app.secret_key = 's3cr3t'
+app.config.from_object('config')
+db = SQLAlchemy(app, session_options={'autocommit': False})
 
 @app.route('/')
 def all_players():
-    return render_template('first.html')
+     drinkers = db.session.query(models.Players).all()
+    return render_template('first.html', players=players)
