@@ -1,11 +1,12 @@
 <html>
+  {% block content %}
     <ul>
       {% for player in players %}
-      <li><{{player.name}}</li>
+      <li><{{player}}</li>
       {% endfor %}
     </ul>
     <hr/>
-    <p>{{players|length}} player{{players|length|pluralize}}
+    <p>{{players|length}} player{{players|length}}
       found in the database.</p>
     {% endblock %}
 </html>

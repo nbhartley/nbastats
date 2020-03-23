@@ -3,5 +3,5 @@ from app import db
 
 
 class Player(db.Model):
-    __tablename__ = 'player'
+    __tablename__ = 'players'
     name = db.Column('name', db.String(20), primary_key=True)
