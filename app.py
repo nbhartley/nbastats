@@ -7,8 +7,6 @@ app.secret_key = 's3cr3t'
 app.config.from_object('config')
 db = SQLAlchemy(app, session_options={'autocommit': False})
 
-from FlaskUserAuthentication.API.routes import api
-
 @app.route('/')
 def all_players():
      drinkers = db.session.query(models.Players).all()
