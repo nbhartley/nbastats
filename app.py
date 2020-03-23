@@ -12,8 +12,3 @@ import models
 def all_players():
      players = db.session.query(models.Player).all()
      return render_template('first.html', players=players)
-
-@app.route('/<some_player>')
-def some_player_page(some_player):
-
-	return render_template('player.html, player=')
