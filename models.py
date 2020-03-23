@@ -1,5 +1,8 @@
 from sqlalchemy import sql, orm
-from app import db
+from flask_sqlalchemy import SQLAlchemy
+
+
+db = SQLAlchemy(app, session_options={'autocommit': False})
 
 class Player(db.Model):
     __tablename__ = 'player'
