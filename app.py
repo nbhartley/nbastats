@@ -10,4 +10,4 @@ db = SQLAlchemy(app, session_options={'autocommit': False})
 @app.route('/')
 def all_players():
      drinkers = db.session.query(models.Players).all()
-    return render_template('first.html', players=players)
+     return render_template('first.html', players=players)
