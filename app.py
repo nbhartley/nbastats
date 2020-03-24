@@ -12,12 +12,10 @@ import models
 def all_players():
      players = models.Player.query.all()
      return render_template('first.html', players=players)
-<<<<<<< HEAD
 
 @app.route('/<some_player>')
 def some_player_page(some_player):
 	Spec_player = models.Player.query.filter_by(name=some_player).first()
 	# Spec_player_OffStat = models.OffStat.query.filter_by(name=some_player).first()
 	return render_template('player.html', player = Spec_player)
-=======
->>>>>>> 961d73a7d655f3c1e39d88d53fa2a0e9578b0740
+
