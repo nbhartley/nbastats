@@ -10,10 +10,11 @@ import models
 
 @app.route('/')
 def all_players():
-     players = db.session.query(models.Player).all()
+     players = models.Player.query.all()
      return render_template('first.html', players=players)
 
 @app.route('/<some_player>')
 def some_player_page(some_player):
-
-	return render_template('player.html, player=')
+	Spec_player = models.Player.query.filter_by(name=some_player).first()
+	# Spec_player_OffStat = models.OffStat.query.filter_by(name=some_player).first()
+	return render_template('player.html', player = Spec_player)
